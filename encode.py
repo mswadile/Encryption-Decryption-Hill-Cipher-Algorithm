@@ -21,14 +21,14 @@ lenb=len(listb)
 
 #----Loop to convert Word to Values that are further useful for Encoding
 for i in range(lenb):
-    for j in range(24):
+    for j in range(27):
         if(listb[i]==smallalpha[j]):
             a[i]=alphavalues[j]
             if(j==23):
                 j=0
             break
         if(j==23):
-            for k in range(24):
+            for k in range(27):
                 if(listb[i]==capitalalpha[k]):
                     a[i]=alphavalues[k]
                     break
