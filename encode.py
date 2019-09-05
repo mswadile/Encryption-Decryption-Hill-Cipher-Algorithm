@@ -2,8 +2,8 @@ import numpy as np
 a=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 c=[[0,0,0,0,0,0,0,0,0,0],
    [0,0,0,0,0,0,0,0,0,0]]
-ecm=[[3,4],
-     [3,6]]
+ecm=[[2,1],
+     [1,1]]
 i=0
 l=0
 
@@ -62,6 +62,12 @@ for i in range(0,lenb):
 c=np.matmul(ecm,c)
 #---------------------------------------------------
 
+#Mod of 28
+for i in range(0,2):
+    for j in range(0,10):
+        c[i][j]%=28
+
+
 #Convert to 1D array for displaying-----------------
 i=0
 j=0
@@ -74,5 +80,12 @@ for i in range(2):
 
        
 a=a[0:lenb]
+
+lista=list(a)
+text=""
+for i in range(0,len(lista)):
+    for j in range(0,27):
+        if(lista[i]==alphavalues[j]):
+            text=''.join([text,smallalpha[j]])
 print("Encoding matrix = ",ecm)
-print("encrypted form= ",a)
+print("encrypted form= ",text)
